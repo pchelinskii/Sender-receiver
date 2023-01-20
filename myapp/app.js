@@ -34,9 +34,9 @@ app.post('/test', (req, res) => {
     list.push(req.body )
     res.send(201)
 })
-// app.put('/test', (req, res) => {
-//     list.pop(req.body)
-// })
+app.put('/test', (req, res) => {
+    list.pop(req.body)
+})
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
