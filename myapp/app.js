@@ -31,7 +31,7 @@ app.get('/test', (req, res)  => {
 })
 app.post('/test', (req, res) => {
     console.log(req.body)
-    list.push(req.body)
+    list.push(req.body )
     res.send(201)
 })
 app.put('/test', (req, res) => {
