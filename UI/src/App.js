@@ -1,4 +1,3 @@
-import './App.css';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -9,6 +8,8 @@ import {
     Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
+import { Button, Container, Grid, Typography} from "@mui/material";
+import {styled} from "@mui/material";
 // import faker from 'faker';
 
 
@@ -52,27 +53,36 @@ const data2 = {
         },
     ],
 };
+const MyComponent = styled('div')({
+    width: 100,
+    textAlign: 'center',
+    color: 'darkslategray',
+    backgroundColor: 'aliceblue',
+    padding: 8,
+    borderRadius: 4,
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-          <div className="chart"><Bar options={options} data={data2} /></div>
-          <div className="btn-group">
-              <div>
-                  <div>Speed </div>
-                  <button>+</button>
-                  <button>-</button>
+      <Container maxWidth="md">
+          <MyComponent>test</MyComponent>
+          <Grid >
+              <div className="chart"><Bar options={options} data={data2} /></div>
+              <Grid container textAlign="center" justifyContent="center" spacing="25">
+                  <Grid item>
+                      <Typography variant="h5" mb="5px">Speed </Typography>
+                      <Button variant="outlined">+</Button>
+                      <Button variant="outlined">-</Button>
 
-              </div>
-              <div>
-                  <div>Sender</div>
-                  <button>add</button>
-                  <button>dell</button>
-              </div>
-          </div>
-      </header>
-    </div>
+                  </Grid>
+                  <Grid item>
+                      <Typography variant="h5" mb="5px">Sender</Typography>
+                      <Button variant="outlined">add</Button>
+                      <Button variant="outlined">dell</Button>
+                  </Grid>
+              </Grid>
+          </Grid>
+      </Container>
   );
 }
 
